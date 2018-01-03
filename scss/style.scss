@@ -1,0 +1,29 @@
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .top {
+      width: 100%;
+      display: flex;
+  }
+  .main-container {
+    width: 80%;
+    padding: 30px 0;
+  }
+  
+  .sidebar {
+    width: 30%;
+    padding: 20px;
+  }
+  .sidebar .input__single {
+    margin-bottom: 15px;
+  }
+  canvas {
+    padding: 20px;
+  }
+  .chart-wrapper{
+      width: 100%;
+  }
