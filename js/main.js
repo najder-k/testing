@@ -259,7 +259,12 @@ function generateChart(chartData) {
 	Highcharts.chart('chart', {
 		chart: {
 			type: 'spline',
-			height: 400
+			height: 400,
+			events: {
+				click: function(e){
+					console.log(e);
+				}
+			}
 		},
 		title: {
 			text: 'Choróbska'
@@ -286,12 +291,18 @@ function generateChart(chartData) {
 			shared: true,
 			valueSuffix: ' units'
 		},
-		// credits: {
-		// 	enabled: false
-		// },
 		plotOptions: {
 			areaspline: {
 				fillOpacity: 0.5
+			},
+			series: {
+				area: {
+					events: {
+						click: function (e) {
+							console.log(e);
+						}
+					}
+				}
 			}
 		},
 		series: [{
@@ -302,13 +313,12 @@ function generateChart(chartData) {
 			name: 'o',
 			data: oData,
 			color: colorMap.O
+
 		}, {
 			name: 'h',
 			data: hData,
 			color: colorMap.H
 		}]
+
 	});
 }
-
-
-
