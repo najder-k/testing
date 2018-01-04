@@ -112,7 +112,16 @@ let simulation = {
 		this.deltaFrames.push(newDeltaFrame);
 		this.updateChart(frame);
 
-	}
+	},
+    redrawCurrentFrame: function() {
+        let fullFrame = this.frames[this.currFrame - 1];
+        range(0, this.sizeX).foreach(x => {
+            range(0, this.sizeY).foreach(y => {
+                val state = fullFrame[x][y];
+                highlightCell(x, y, colorMap[state], this.size);
+            })
+        })
+    }
 }
 
 function rgb(r, g, b) {
