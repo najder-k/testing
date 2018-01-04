@@ -1,4 +1,19 @@
 'use strict'
+$(document).ready(function () {
+	document.getElementById('clickMe').addEventListener('click', () => runSimulation())
+	document.getElementById('mocker').addEventListener('click', () => mockSimulation())
+	document.getElementById('pause').addEventListener('click', () => pausePls())
+	document.getElementById('rewind').addEventListener('click', () => simulation.rewind())
+
+	$('input[type=range]').change(function () {
+
+		var data = $(this).val();
+		$(this).parent().find('.range-value.percent').html(`${data}%`);
+		$(this).parent().find('.range-value.frames').html(`${data} frames per second`);
+		
+	}).change();
+})
+
 let fps = () => $('form input[name="speed"]').val();
 let colorMap = {
 	"X": rgb(217, 102, 255),
@@ -126,6 +141,7 @@ function range(from, to) {
 }
 
 function mockSimulation() {
+
 	simulation.reset();
 
 	let randomState = (t, x, y) => "XOOHXOHHX"[Math.floor((Math.sin(t * 0.05) + 1) * x + (Math.sin(t * 0.08) + 1) * y * 0.3 + Math.sin(Math.random() * 3.14) + 13) % 5 + Math.floor((Math.sin(t * 0.02)) * 2 + 2)]
@@ -214,7 +230,7 @@ function generateChart(chartData) {
 	let xData = [],
 		oData = [],
 		hData = [];
-	chartData.map( (i,e) => {
+	chartData.map((i, e) => {
 		xData.push(i.X);
 		oData.push(i.O);
 		hData.push(i.H);
@@ -269,3 +285,6 @@ function generateChart(chartData) {
 		}]
 	});
 }
+
+
+

@@ -8,58 +8,71 @@
 
 <body>
   <div class="top">
-      <div class="sidebar">
-          <form>
-            <div class="input__single">
-              <input id="clickMe" type="button" value="run simulation" onclick="runSimulation();" />
-            </div>
-            <div class="input__single">
-              <input id="mocker" type="button" value="run mock simulation" onclick="mockSimulation();" />
-            </div>
-            <div class="input__single">
-              <input id="pause" type="button" value="pause" onclick="pausePls();" />
-            </div>
-            <div class="input__single">
-              <input id="rewind" type="button" value="rewind" onclick="simulation.rewind();" />
-            </div>
-            <div class="input__single">
-              <label>infectiousness</label>
-              <input type="range" name="infect" min="1" max="100" value="85">
-            </div>
-            <div class="input__single">
-              <label>persistence</label>
-              <input type="range" name="persistence" min="1" max="100" value="60">
-            </div>
-            <div class="input__single">
-              <label>initial sick</label>
-              <input type="range" name="initial" min="1" max="100" value="10">
-            </div>
-            <div class="input__single">
-              <label>immunity frames</label>
-              <input name="immune" type="number" value="5">
-            </div>
-            <div class="input__single">
-              <label>simulation length</label>
-              <input name="frames" type="number" value="100">
-            </div>
-            <div class="input__single">
-              <label>x</label>
-              <input name="x" type="number" value="30">
-            </div>
-            <div class="input__single">
-              <label>y</label>
-              <input name="y" type="number" value="30">
-            </div>
-            <div class="input__single">
-              <label>animation speed</label>
-              <input type="range" name="speed" min="1" max="50" value="1">
-            </div>
-          </form>
+    <canvas id="canvas" width="600" height="600">canvas didn't load</canvas>
+    <div class="sidebar">
+      <form>
+        <div class="inputs-row">
+          <div class="input__single">
+            <input id="clickMe" type="button" value="run simulation" />
+          </div>
+          <div class="input__single">
+            <input id="mocker" type="button" value="run mock simulation" />
+          </div>
         </div>
-      
-        <canvas id="canvas" width="600" height="600">canvas didn't load</canvas>
+        <div class="inputs-row">
+          <div class="input__single">
+            <input id="pause" type="button" value="pause" />
+          </div>
+          <div class="input__single">
+            <input id="rewind" type="button" value="rewind" />
+          </div>
+        </div>
+
+        <div class="input__single range">
+          <label>infectiousness</label>
+          <input type="range" name="infect" min="1" max="100" value="85">
+          <p class="range-value percent"></p>
+        </div>
+        <div class="input__single range">
+          <label>persistence</label>
+          <input type="range" name="persistence" min="1" max="100" value="60">
+          <p class="range-value percent"></p>
+        </div>
+        <div class="input__single range">
+          <label>initial sick</label>
+          <input type="range" name="initial" min="1" max="100" value="10">
+          <p class="range-value percent"></p>
+        </div>
+        <div class="inputs-row">
+          <div class="input__single">
+            <label>immunity frames</label>
+            <input name="immune" type="number" value="5">
+          </div>
+          <div class="input__single">
+            <label>simulation length</label>
+            <input name="frames" type="number" value="100">
+          </div>
+        </div>
+        <div class="inputs-row">
+          <div class="input__single">
+            <label>x</label>
+            <input name="x" type="number" value="30">
+          </div>
+          <div class="input__single">
+            <label>y</label>
+            <input name="y" type="number" value="30">
+          </div>
+        </div>
+
+        <div class="input__single">
+          <label>animation speed</label>
+          <input type="range" name="speed" min="1" max="50" value="1">
+          <p class="range-value frames"></p>
+        </div>
+      </form>
+    </div>
   </div>
-  
+
   <div class="chart-wrapper">
     <div id="chart"></div>
 

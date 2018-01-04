@@ -2,6 +2,28 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+$(document).ready(function () {
+	document.getElementById('clickMe').addEventListener('click', function () {
+		return runSimulation();
+	});
+	document.getElementById('mocker').addEventListener('click', function () {
+		return mockSimulation();
+	});
+	document.getElementById('pause').addEventListener('click', function () {
+		return pausePls();
+	});
+	document.getElementById('rewind').addEventListener('click', function () {
+		return simulation.rewind();
+	});
+
+	$('input[type=range]').change(function () {
+
+		var data = $(this).val();
+		$(this).parent().find('.range-value.percent').html(data + '%');
+		$(this).parent().find('.range-value.frames').html(data + ' frames per second');
+	}).change();
+});
+
 var fps = function fps() {
 	return $('form input[name="speed"]').val();
 };
@@ -147,6 +169,7 @@ function range(from, to) {
 }
 
 function mockSimulation() {
+
 	simulation.reset();
 
 	var randomState = function randomState(t, x, y) {
