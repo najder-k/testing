@@ -263,6 +263,9 @@ function generateChart(chartData) {
 			events: {
 				click: function(e){
 					console.log(e);
+					let clickedFrame = Math.floor(e.xAxis[0].value);
+					simulation.currFrame = clickedFrame + 1; 
+					simulation.redrawCurrentFrame();
 				}
 			}
 		},
@@ -295,15 +298,15 @@ function generateChart(chartData) {
 			areaspline: {
 				fillOpacity: 0.5
 			},
-			series: {
-				area: {
-					events: {
-						click: function (e) {
-							console.log(e);
-						}
-					}
-				}
-			}
+			// series: {
+			// 	area: {
+			// 		events: {
+			// 			click: function (e) {
+			// 				console.log(e);
+			// 			}
+			// 		}
+			// 	}
+			// }
 		},
 		series: [{
 			name: 'x',
