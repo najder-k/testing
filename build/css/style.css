@@ -131,6 +131,10 @@ input[type="number"] {
   border-bottom: 2px solid #555555;
 }
 
+path.highcharts-point {
+  display: none;
+}
+
 input[type="range"] {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;

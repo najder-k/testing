@@ -237,7 +237,7 @@ function generateChart(chartData) {
 	});
 	Highcharts.chart('chart', {
 		chart: {
-			type: 'line',
+			type: 'spline',
 			height: 400
 		},
 		title: {
@@ -265,9 +265,9 @@ function generateChart(chartData) {
 			shared: true,
 			valueSuffix: ' units'
 		},
-		credits: {
-			enabled: false
-		},
+		// credits: {
+		// 	enabled: false
+		// },
 		plotOptions: {
 			areaspline: {
 				fillOpacity: 0.5
