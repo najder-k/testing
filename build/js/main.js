@@ -276,7 +276,7 @@ function generateChart(chartData) {
 	});
 	Highcharts.chart('chart', {
 		chart: {
-			type: 'areaspline',
+			type: 'line',
 			height: 400
 		},
 		title: {
