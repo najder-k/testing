@@ -6,6 +6,7 @@
 
 body {
   max-width: 1100px;
+  padding: 50px 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -30,6 +31,11 @@ body {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main-container {
@@ -86,6 +92,7 @@ canvas {
 
 .chart-wrapper {
   width: 100%;
+  padding-top: 50px;
 }
 
 input[type="button"] {
