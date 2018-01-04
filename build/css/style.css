@@ -57,14 +57,6 @@ body {
   width: 100%;
 }
 
-.sidebar .input__single:first-of-type {
-  padding-right: 5px;
-}
-
-.sidebar .input__single:last-of-type {
-  padding-left: 5px;
-}
-
 .sidebar .input__single label {
   display: block;
 }
@@ -83,6 +75,14 @@ body {
 
 .inputs-row .input__single input {
   width: 100%;
+}
+
+.inputs-row .input__single:first-of-type {
+  padding-right: 5px;
+}
+
+.inputs-row .input__single:last-of-type {
+  padding-left: 5px;
 }
 
 canvas {

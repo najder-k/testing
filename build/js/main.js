@@ -22,6 +22,11 @@ $(document).ready(function () {
 		$(this).parent().find('.range-value.percent').html(data + '%');
 		$(this).parent().find('.range-value.frames').html(data + ' frames per second');
 	}).change();
+
+	$('input[type=color]').change(function () {
+		colorMap[$(this).attr('name')] = $(this).val();
+		simulation.redrawCurrentFrame();
+	});
 });
 
 var fps = function fps() {
@@ -136,11 +141,24 @@ var simulation = {
 
 		this.deltaFrames.push(newDeltaFrame);
 		this.updateChart(frame);
-	}
-};
+	},
+	redrawCurrentFrame: function redrawCurrentFrame() {
+		var _this = this;
 
-function rgb(r, g, b) {
-	return { r: r, g: g, b: b };
+		var fullFrame = this.frames[this.currFrame - 1];
+		range(0, this.sizeX).forEach(function (x) {
+			range(0, _this.sizeY).forEach(function (y) {
+				var state = fullFrame[x][y];
+				highlightCell(x, y, colorMap[state], _this.size);
+			});
+		});
+	}
+
+	// function rgb(r, g, b) {
+	// 	return { r: r, g: g, b: b }
+	// }
+};function rgb(r, g, b) {
+	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 function rgbStr(color) {
 	return "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
@@ -152,14 +170,18 @@ function modifyColor(color, modifier) {
 	return { r: f(color.r), g: f(color.g), b: f(color.b) };
 }
 
+// function highlightCell(x, y, color, size) {
+// 	ctx.fillStyle = rgbStr(color);
+// 	ctx.fillRect(x * size, y * size, size, size);
+// 	if (size > 3) {
+// 		ctx.lineWidth = 1;
+// 		ctx.strokeStyle = rgbStr(modifyColor(color, 1.5));
+// 		ctx.strokeRect(x * size, y * size, size, size);
+// 	}
+// }
 function highlightCell(x, y, color, size) {
-	ctx.fillStyle = rgbStr(color);
+	ctx.fillStyle = color;
 	ctx.fillRect(x * size, y * size, size, size);
-	if (size > 3) {
-		ctx.lineWidth = 1;
-		ctx.strokeStyle = rgbStr(modifyColor(color, 1.5));
-		ctx.strokeRect(x * size, y * size, size, size);
-	}
 }
 
 function range(from, to) {
@@ -314,13 +336,16 @@ function generateChart(chartData) {
 		},
 		series: [{
 			name: 'x',
-			data: xData
+			data: xData,
+			color: colorMap.X
 		}, {
 			name: 'o',
-			data: oData
+			data: oData,
+			color: colorMap.O
 		}, {
 			name: 'h',
-			data: hData
+			data: hData,
+			color: colorMap.H
 		}]
 	});
 }
