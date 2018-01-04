@@ -123,7 +123,7 @@ let simulation = {
 		range(0, this.sizeX).forEach(x => {
 			range(0, this.sizeY).forEach(y => {
 				let state = fullFrame[x][y];
-				highlightCell(x, y, colorMap[state], this.size);
+				highlightCell(x, y, colorMap[state], this.cellSize);
 			})
 		})
 	}

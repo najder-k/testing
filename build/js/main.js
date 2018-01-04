@@ -149,7 +149,7 @@ var simulation = {
 		range(0, this.sizeX).forEach(function (x) {
 			range(0, _this.sizeY).forEach(function (y) {
 				var state = fullFrame[x][y];
-				highlightCell(x, y, colorMap[state], _this.size);
+				highlightCell(x, y, colorMap[state], _this.cellSize);
 			});
 		});
 	}
