@@ -334,14 +334,23 @@ function generateChart(chartData) {
 				fillOpacity: 0.5
 			}
 		},
+
 		series: [{
 			name: 'x',
 			data: xData,
-			color: colorMap.X
+			color: colorMap.X,
+			point: {
+				events: {
+					click: function click() {
+						alert('Category: ' + this.category + ', value: ' + this.y);
+					}
+				}
+			}
 		}, {
 			name: 'o',
 			data: oData,
 			color: colorMap.O
+
 		}, {
 			name: 'h',
 			data: hData,

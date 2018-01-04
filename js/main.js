@@ -286,13 +286,11 @@ function generateChart(chartData) {
 			shared: true,
 			valueSuffix: ' units'
 		},
-		// credits: {
-		// 	enabled: false
-		// },
 		plotOptions: {
 			areaspline: {
 				fillOpacity: 0.5
 			}
+
 		},
 		series: [{
 			name: 'x',
@@ -302,6 +300,7 @@ function generateChart(chartData) {
 			name: 'o',
 			data: oData,
 			color: colorMap.O
+
 		}, {
 			name: 'h',
 			data: hData,
