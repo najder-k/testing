@@ -259,7 +259,12 @@ function generateChart(chartData) {
 	Highcharts.chart('chart', {
 		chart: {
 			type: 'spline',
-			height: 400
+			height: 400,
+			events: {
+				click: function(e){
+					console.log(e);
+				}
+			}
 		},
 		title: {
 			text: 'Choróbska'
@@ -289,8 +294,16 @@ function generateChart(chartData) {
 		plotOptions: {
 			areaspline: {
 				fillOpacity: 0.5
+			},
+			series: {
+				area: {
+					events: {
+						click: function (e) {
+							console.log(e);
+						}
+					}
+				}
 			}
-
 		},
 		series: [{
 			name: 'x',
@@ -306,8 +319,6 @@ function generateChart(chartData) {
 			data: hData,
 			color: colorMap.H
 		}]
+
 	});
 }
-
-
-
