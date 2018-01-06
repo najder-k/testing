@@ -2,7 +2,7 @@
 $(document).ready(function () {
 	generateChart();
 
-	document.getElementById('clickMe').addEventListener('click', () => mockSimulation())
+	document.getElementById('clickMe').addEventListener('click', () => runSimulation())
 	document.getElementById('pause').addEventListener('click', () => pausePls())
 	
 	$('input[type=range]').change(function () {
@@ -190,12 +190,12 @@ function runSimulation() {
     gridCtx.lineWidth = 2;
     gridCtx.strokeStyle = "#ffffff";
 	range(0, x).forEach(i => {
-		gridCtx.moveTo(0, size*i + 1);
-        gridCtx.lineTo(grid.width, size*i + 1);
-	})
-	range(0, y).forEach(i => {
         gridCtx.moveTo(size*i + 1, 0);
         gridCtx.lineTo(size*i + 1, grid.height);
+	})
+	range(0, y).forEach(i => {
+		gridCtx.moveTo(0, size*i + 1);
+        gridCtx.lineTo(grid.width, size*i + 1);
 	})
 	gridCtx.stroke();
 

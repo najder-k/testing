@@ -55,7 +55,7 @@ body {
 }
 
 .below {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .sidebar .input__single {
@@ -110,7 +110,7 @@ body {
   width: 100%;
   max-width: 930px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 0px;
   padding-right: 20px;
 }
 
