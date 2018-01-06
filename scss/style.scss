@@ -15,7 +15,7 @@ body {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
   }
   .main-container {
     width: 80%;
@@ -68,7 +68,10 @@ body {
   }
   .chart-wrapper{
       width: 100%;
+      max-width: 930px;
+      margin: 0 auto;
       padding-top: 50px;
+      padding-right: 20px;
   }
 
   input {
