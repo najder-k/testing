@@ -54,10 +54,15 @@ body {
       }
     }
   }
-  canvas {
+  #canvas {
     // padding: 20px;
     border: 1px solid #333;
     background: url('./../../scss/pattern.png');
+  }
+  .canvas-wrapper {
+    position:relative; 
+    width:600px; 
+    height:600px;
   }
   .chart-wrapper{
       width: 100%;
@@ -83,15 +88,8 @@ body {
   margin-top: 0;
 }
   .range {
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     position: relative;
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 30px;
-      border-bottom: 2px solid #555555;
-    }
   }
   path.highcharts-point {
     display: none;

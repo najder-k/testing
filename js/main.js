@@ -262,7 +262,7 @@ function generateChart() {
 			height: 200,
 			events: {
 				click: function(e){
-					let frame = Math.floor(e.xAxis[0].value);
+					let frame = Math.round(e.xAxis[0].value);
 					simulation.setFrame(frame + 1);
 				}
 			}
@@ -312,7 +312,7 @@ function generateChart() {
 		         point: {
 		             events: {
 		                click: function(e){
-							let frame = Math.floor(e.point.index);
+							let frame = e.point.index;
 							simulation.setFrame(frame + 1);
 						}
 		            }
