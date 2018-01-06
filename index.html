@@ -15,10 +15,10 @@
       </div>
       <div class="inputs-row below">
           <div class="input__single">
-            <input id="clickMe" type="button" value="run simulation" />
+            <input id="clickMe" type="button" value="Run simulation" />
           </div>
           <div class="input__single">
-            <input id="pause" type="button" value="pause" />
+            <input id="pause" type="button" value="play/pause" />
           </div>
       </div>
     </div>
@@ -26,27 +26,27 @@
       <form>
 
         <div class="input__single range">
-          <label>infectiousness</label>
+          <label>Infection rate</label>
           <input type="range" name="infect" min="1" max="100" value="35">
           <p class="range-value percent"></p>
         </div>
         <div class="input__single range">
-          <label>persistence</label>
+          <label>Recovery rate</label>
           <input type="range" name="persistence" min="1" max="100" value="40">
           <p class="range-value percent"></p>
         </div>
         <div class="input__single range">
-          <label>initial sick</label>
+          <label>Initial sick</label>
           <input type="range" name="initial" min="1" max="100" value="10">
           <p class="range-value percent"></p>
         </div>
         <div class="inputs-row">
           <div class="input__single">
-            <label>immunity frames</label>
+            <label>Immunity period</label>
             <input name="immune" type="number" value="8">
           </div>
           <div class="input__single">
-            <label>simulation length</label>
+            <label>Simulation length</label>
             <input name="frames" type="number" value="100">
           </div>
         </div>
@@ -67,16 +67,16 @@
           <p class="range-value frames"></p>
         </div>
         <div class="input__single">
-          <label>Select color of S</label>
+          <label>Select the color of <strong>S</strong>usceptible</label>
           <input type="color" name="S" value="#66B3FF">
         </div>
         <div class="input__single">
-          <label>Select color of I</label>
+          <label>Select the color of <strong>I</strong>nfectious</label>
           <input type="color" name="I" value="#D966FF">
         </div>
         <div class="input__single">
-          <label>Select color of P</label>
-          <input type="color" name="P" value="#DEDEFF">
+          <label>Select the color of <strong>R</strong>ecovered</label>
+          <input type="color" name="R" value="#DEDEFF">
         </div>
 
       </form>
