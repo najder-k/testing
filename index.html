@@ -8,34 +8,31 @@
 
 <body>
   <div class="top">
-    <canvas id="canvas" width="600" height="600">canvas didn't load</canvas>
-    <div class="sidebar">
-      <form>
-        <div class="inputs-row">
+    <div>
+      <div class="canvas-wrapper">
+      <canvas id="canvas" width="600" height="600" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+      <canvas id="grid" width="600" height="600" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+      </div>
+      <div class="inputs-row">
           <div class="input__single">
             <input id="clickMe" type="button" value="run simulation" />
           </div>
           <div class="input__single">
-            <input id="mocker" type="button" value="run mock simulation" />
-          </div>
-        </div>
-        <div class="inputs-row">
-          <div class="input__single">
             <input id="pause" type="button" value="pause" />
           </div>
-          <div class="input__single">
-            <input id="rewind" type="button" value="rewind" />
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <form>
 
         <div class="input__single range">
           <label>infectiousness</label>
-          <input type="range" name="infect" min="1" max="100" value="85">
+          <input type="range" name="infect" min="1" max="100" value="35">
           <p class="range-value percent"></p>
         </div>
         <div class="input__single range">
           <label>persistence</label>
-          <input type="range" name="persistence" min="1" max="100" value="60">
+          <input type="range" name="persistence" min="1" max="100" value="40">
           <p class="range-value percent"></p>
         </div>
         <div class="input__single range">
@@ -46,7 +43,7 @@
         <div class="inputs-row">
           <div class="input__single">
             <label>immunity frames</label>
-            <input name="immune" type="number" value="5">
+            <input name="immune" type="number" value="8">
           </div>
           <div class="input__single">
             <label>simulation length</label>
@@ -56,41 +53,43 @@
         <div class="inputs-row">
           <div class="input__single">
             <label>x</label>
-            <input name="x" type="number" value="30">
+            <input name="x" type="number" value="15">
           </div>
           <div class="input__single">
             <label>y</label>
-            <input name="y" type="number" value="30">
+            <input name="y" type="number" value="15">
           </div>
         </div>
 
         <div class="input__single">
           <label>animation speed</label>
-          <input type="range" name="speed" min="1" max="50" value="1">
+          <input type="range" name="speed" min="1" max="50" value="12">
           <p class="range-value frames"></p>
         </div>
         <div class="input__single">
-          <label>Select color of X</label>
-          <input type="color" name="X" value="#D966FF">
+          <label>Select color of S</label>
+          <input type="color" name="S" value="#66B3FF">
         </div>
         <div class="input__single">
-            <label>Select color of O</label>
-            <input type="color" name="O" value="#DEDEFF">
-          </div>
-          <div class="input__single">
-              <label>Select color of H</label>
-              <input type="color" name="H" value="#66B3FF">
-            </div>
+          <label>Select color of I</label>
+          <input type="color" name="I" value="#D966FF">
+        </div>
+        <div class="input__single">
+          <label>Select color of P</label>
+          <input type="color" name="P" value="#DEDEFF">
+        </div>
+
       </form>
     </div>
-  </div>
-
-  <div class="chart-wrapper">
-    <div id="chart"></div>
 
   </div>
+    <div class="chart-wrapper">
+      <div id="chart"></div>
+
+    </div>
+
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="build/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

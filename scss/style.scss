@@ -11,9 +11,11 @@ body {
     flex-wrap: wrap;
   }
   .top {
+      Align-items: center;
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
   }
   .main-container {
     width: 80%;
