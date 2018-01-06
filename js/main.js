@@ -2,7 +2,7 @@
 $(document).ready(function () {
 	generateChart();
 
-	document.getElementById('clickMe').addEventListener('click', () => runSimulation())
+	document.getElementById('clickMe').addEventListener('click', () => mockSimulation())
 	document.getElementById('pause').addEventListener('click', () => pausePls())
 	
 	$('input[type=range]').change(function () {
